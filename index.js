@@ -31,7 +31,9 @@ const hubspot = axios.create({
 
 app.get('/', (req, res) => {
   const url = `https://focus.teamleader.eu/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=contacts+deals`;
-  res.send(`Open <a href="${url}">Teamleader OAuth</a> om verbinding te maken`);
+  res.send(`
+    <p>Open <a href="${url}">Teamleader Authorizeren</a> om verbinding te maken.</p>
+  `);
 });
 
 app.get('/callback', async (req, res) => {
@@ -45,9 +47,19 @@ app.get('/callback', async (req, res) => {
       client_secret: CLIENT_SECRET,
     });
     accessToken = tokenRes.data.access_token;
-    res.send('✅ OAuth succesvol! Je kunt nu <a href="/sync-contacts">/sync-contacts</a>, <a href="/random-contact">/random-contact</a> of <a href="/sync-deals">/sync-deals</a> bezoeken.');
+    res.send(`
+      <h2>✅ OAuth succesvol!</h2>
+      <p>Je kunt nu:</p>
+      <ul>
+        <li><a href="/sync-contacts">Teamleader records naar Hubspot sturen</a></li>
+        <li><a href="/random-contact">Een random record weergeven</a></li>
+      </ul>
+    `);
   } catch (err) {
-    res.status(500).send('❌ OAuth fout: ' + JSON.stringify(err.response?.data || err.message));
+    res.status(500).send(`
+      <h2>❌ OAuth fout</h2>
+      <p>${JSON.stringify(err.response?.data || err.message)}</p>
+    `)
   }
 });
 
@@ -74,6 +86,7 @@ app.get('/random-contact', async (req, res) => {
     page: { size: 100, number: 1 }
   });
   const contacts = contactsResponse.data.data;
+  contacts.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)); // oudste eerst
   const randomContact = contacts[Math.floor(Math.random() * contacts.length)];
 
   const infoResponse = await teamleader().post('/contacts.info', { id: randomContact.id });
@@ -89,7 +102,7 @@ app.get('/random-contact', async (req, res) => {
     ? (await teamleader().post('/deals.info', { id: deals[0].id })).data.data
     : null;
 
-  res.json({ contact: info, deal: dealDetails.current_phase });
+  res.json({ contact: info, deal: dealDetails });
 });
 
 
@@ -151,14 +164,13 @@ async function syncContacts() {
       console.log('📦 Deal details voor', email, ':', JSON.stringify(dealDetails, null, 2));
     }
 
-    let phaseLabel = '';
-    phaseLabel = dealDetails?.current_phase?.type || '';
     const weiVal = 'weighted: ' + dealDetails.weighted_value.amount + ' ' + dealDetails.weighted_value.currency;
     const estVal = 'est.: ' + dealDetails.estimated_value.amount + ' ' + dealDetails.estimated_value.currency;
 
     const customFields = dealDetails ? {
       deal_created_at: formatToMidnightISOString(dealDetails.created_at),
-      deal_closed: formatToMidnightISOString(dealDetails.won_on || dealDetails.lost_on),
+      deal_closed_at: formatToMidnightISOString(dealDetails.won_on || dealDetails.lost_on),
+      deal_status: dealDetails.status,
       deal_title: dealDetails.title || '',
       deal_phase: dealDetails.status || '',
       deal_value: weiVal + ' | ' + estVal || 0
