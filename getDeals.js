@@ -66,10 +66,6 @@ app.get('/callback', async (req, res) => {
 
       const deals = dealsRes.data.data || [];
 
-    
-
-
-
       const phaseIds = [
         ...new Set(
           deals
@@ -277,15 +273,14 @@ function mapTeamleaderDealToHubspot(deal) {
       dealname: deal.title || 'Teamleader Deal',
       description: deal.summary || '',
       amount: deal.estimated_value?.amount ? String(deal.estimated_value.amount) : undefined,
-      closedate: deal.closed_at || deal.estimated_closing_date || Date.now(),
+      //closedate: deal.closed_at || deal.estimated_closing_date || Date.now(), // bestaat niet in teamleader
       pipeline: 'default',
       dealstage: mapTeamleaderStatusToHubspotStage(deal.status, deal.current_phase_details?.name),
       dealtype: determineDealType(deal),
-      description: deal.description || '',
+      //description: deal.description || '', // bestaat niet in teamleader
       //hs_createdate: deal.created_at || Date.now(),
-      hs_lastmodifieddate: deal.updated_at || Date.now(),
-      deal_last_update: deal.updated_at,
-      // Add more mappings as needed
+      //hs_lastmodifieddate: deal.updated_at || Date.now(), // niet nodig? aangezien we deal_last_update gebruiken
+      deal_last_update: deal.updated_at
     }
   };
 }
