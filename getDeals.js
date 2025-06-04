@@ -2,11 +2,11 @@ const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
 
-const CLIENT_ID = process.env.CLIENT_ID || 'ff948f9b735d8bbe538feb1d3a8c086e';
-const CLIENT_SECRET = process.env.CLIENT_SECRET || 'ff948f9b735d8bbe538feb1d3a8c086e';
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3000/callback';
 const HUBSPOT_TOKEN = process.env.HUBSPOT_TOKEN;
-const API_BASE_URL = 'https://api.teamleader.eu';
+const API_BASE_URL = process.env.API_BASE_URL || 'https://api.teamleader.eu';
 
 const app = express();
 const PORT = 3000;
