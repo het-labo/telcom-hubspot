@@ -1,0 +1,2737 @@
+[
+  {
+    "id": "12e82de8-3524-0457-927f-7c0a81d000d6",
+    "title": "Voorafgaande offerte Huawei thuisbatterij",
+    "summary": null,
+    "reference": "35832",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "d701ca35-1a99-0f5a-b77b-c1809475c192"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 197.28,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 3945.5,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-21T13:30:19+00:00",
+    "updated_at": "2025-05-21T14:13:09+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/12e82de8-3524-0457-927f-7c0a81d000d6"
+  },
+  {
+    "id": "0accdf34-0ce7-025c-9d7b-219191d0000d",
+    "title": "Offerte laadkabel",
+    "summary": null,
+    "reference": "35831",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "company",
+        "id": "80f1ecbc-7aa7-0790-ba71-8d648360bc84"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 125,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 250,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-21T13:26:26+00:00",
+    "updated_at": "2025-05-21T13:28:26+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/0accdf34-0ce7-025c-9d7b-219191d0000d"
+  },
+  {
+    "id": "3718bd77-edfd-0e7c-a57d-0531b1cfeb71",
+    "title": "Voorafgaande offerte Solax thuisbatterij",
+    "summary": null,
+    "reference": "35830",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "2c72757c-00a0-087f-9163-b6303d3205ca"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 405.67,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 8113.48,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-21T11:13:27+00:00",
+    "updated_at": "2025-05-21T11:48:11+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/3718bd77-edfd-0e7c-a57d-0531b1cfeb71"
+  },
+  {
+    "id": "9b326e75-dd1d-0a4e-ae7d-b2c4b1cfe76e",
+    "title": "Batterij-opstelling Alpha ESS 10,1kWh",
+    "summary": null,
+    "reference": "35829",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "c153e8f7-2fe5-025f-ad68-7b9b3b29ed1d"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 291.78,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 5835.58,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-21T10:41:09+00:00",
+    "updated_at": "2025-05-21T10:50:07+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/9b326e75-dd1d-0a4e-ae7d-b2c4b1cfe76e"
+  },
+  {
+    "id": "834d779d-de23-049c-9375-054c71cfe746",
+    "title": "Batterij-opstelling Solax 10,8kWh",
+    "summary": null,
+    "reference": "35828",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "c153e8f7-2fe5-025f-ad68-7b9b3b29ed1d"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 302.36,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6047.11,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-21T10:39:00+00:00",
+    "updated_at": "2025-05-21T10:50:34+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/834d779d-de23-049c-9375-054c71cfe746"
+  },
+  {
+    "id": "9b6682c9-c6c6-052b-aa72-2dfe11cfdc34",
+    "title": "Uitbreiding PV-installatie EPB waarde",
+    "summary": null,
+    "reference": "35827",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "8f37eeaa-a464-0110-b67d-852e64759c46"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 47.7,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 954,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-21T09:00:40+00:00",
+    "updated_at": "2025-05-21T09:18:08+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/9b6682c9-c6c6-052b-aa72-2dfe11cfdc34"
+  },
+  {
+    "id": "ac3a7018-750a-0e7b-b57b-5d1c81cfd4e3",
+    "title": "Batterij-opstelling Solax 18kWh",
+    "summary": null,
+    "reference": "35826",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "4ee9dc2c-692e-08c7-8779-073cf427aad5"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4138.93,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 8277.85,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-21T08:21:56+00:00",
+    "updated_at": "2025-05-21T10:28:03+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/ac3a7018-750a-0e7b-b57b-5d1c81cfd4e3"
+  },
+  {
+    "id": "b66327ee-099d-06db-a175-10b411cfd4da",
+    "title": "Demonteren en her monteren 44 zonnepanelen",
+    "summary": null,
+    "reference": "35825",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "ba2a8673-1413-05dd-a165-c05cc662a618"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 288.75,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 5775,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-21T08:21:45+00:00",
+    "updated_at": "2025-05-21T08:22:34+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/b66327ee-099d-06db-a175-10b411cfd4da"
+  },
+  {
+    "id": "c13298e2-7ed7-067f-8178-500121cfd4be",
+    "title": "Batterij-opstelling SMA/BYYD 16,6kWh",
+    "summary": null,
+    "reference": "35824",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "4ee9dc2c-692e-08c7-8779-073cf427aad5"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 6129.85,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 12259.7,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-21T08:21:03+00:00",
+    "updated_at": "2025-05-21T10:27:15+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/c13298e2-7ed7-067f-8178-500121cfd4be"
+  },
+  {
+    "id": "91283f73-3c44-0836-af7e-e6c791cfd312",
+    "title": "Batterij-opstelling Solax 10,8kWh",
+    "summary": null,
+    "reference": "35823",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "5d5fea84-f56c-0949-ab76-8245d4717b79"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3175.06,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6350.11,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "cbb0b8da-02c9-0dfd-b55d-59b320d6b79c"
+    },
+    "created_at": "2025-05-21T08:11:43+00:00",
+    "updated_at": "2025-05-21T08:15:38+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/91283f73-3c44-0836-af7e-e6c791cfd312"
+  },
+  {
+    "id": "82df6a34-2b90-0f2f-a17f-8cc491cfd011",
+    "title": "Voorafgaande offerte Easee laadstation",
+    "summary": null,
+    "reference": "35822",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "599c351c-0db0-0ed4-887a-45e70344c7c3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 774.5,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 1549,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-21T07:44:02+00:00",
+    "updated_at": "2025-05-21T07:49:25+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/82df6a34-2b90-0f2f-a17f-8cc491cfd011"
+  },
+  {
+    "id": "d2b9e603-5a0e-070c-867f-38b101cfcbcd",
+    "title": "Batterij-opstelling Solax 14,4kWh",
+    "summary": null,
+    "reference": "35821",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "09901f36-ca6c-097f-8277-6448946ec0e0"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3841.74,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 7683.48,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-21T07:12:59+00:00",
+    "updated_at": "2025-05-21T07:24:29+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/d2b9e603-5a0e-070c-867f-38b101cfcbcd"
+  },
+  {
+    "id": "fb492362-f090-0715-8b71-92e2c1cfca87",
+    "title": "Bijkomende pv-installatie 2730Wp",
+    "summary": null,
+    "reference": "35820",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "09901f36-ca6c-097f-8277-6448946ec0e0"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 1033.13,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 2066.25,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-21T07:01:37+00:00",
+    "updated_at": "2025-05-21T07:27:15+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/fb492362-f090-0715-8b71-92e2c1cfca87"
+  },
+  {
+    "id": "0b47962f-8c4d-07ae-9472-dd19d1cfca10",
+    "title": "LP Easee Charge Up",
+    "summary": null,
+    "reference": "35819",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "b8bbde82-deca-0598-9b7c-976ec45feeff"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 800,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 1600,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "9ae8e280-5952-0ea3-8244-832b66df172b"
+    },
+    "created_at": "2025-05-21T06:58:51+00:00",
+    "updated_at": "2025-05-21T07:22:36+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/0b47962f-8c4d-07ae-9472-dd19d1cfca10"
+  },
+  {
+    "id": "f01cb781-46c9-0a32-a472-350dc1cfc0e8",
+    "title": "PV Trina 455 + Huawei omvormer",
+    "summary": null,
+    "reference": "35818",
+    "status": "won",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "a70f6b63-dc5b-0b78-9d7d-d9bdd46e32e3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4146.23,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 4146.23,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 1,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "e22f66e8-39d2-0af8-b24c-8125dc64967a"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": "2025-05-21T14:34:46+00:00",
+    "source": {
+      "type": "dealSource",
+      "id": "4c4a1a95-d343-0896-8156-05b036a6be32"
+    },
+    "created_at": "2025-05-21T05:49:35+00:00",
+    "updated_at": "2025-05-21T14:34:46+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/f01cb781-46c9-0a32-a472-350dc1cfc0e8"
+  },
+  {
+    "id": "e7f00df9-7f88-07e3-9c7f-5efcd1cfc041",
+    "title": "Multi-Split Fujitsu",
+    "summary": null,
+    "reference": "35817",
+    "status": "won",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "a70f6b63-dc5b-0b78-9d7d-d9bdd46e32e3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4150.94,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 4150.94,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 1,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "e22f66e8-39d2-0af8-b24c-8125dc64967a"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": "2025-05-21T14:33:56+00:00",
+    "source": {
+      "type": "dealSource",
+      "id": "4c4a1a95-d343-0896-8156-05b036a6be32"
+    },
+    "created_at": "2025-05-21T05:44:46+00:00",
+    "updated_at": "2025-05-21T14:33:56+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/e7f00df9-7f88-07e3-9c7f-5efcd1cfc041"
+  },
+  {
+    "id": "f4c87e22-b380-0a14-be72-bcdce1cfbe12",
+    "title": "Batterij Huawei",
+    "summary": null,
+    "reference": "35816",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "90613dcc-3d25-0a6f-b37a-1bdcf4734b1b"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3179.25,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6358.49,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "9ae8e280-5952-0ea3-8244-832b66df172b"
+    },
+    "created_at": "2025-05-21T05:28:09+00:00",
+    "updated_at": "2025-05-21T05:40:51+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/f4c87e22-b380-0a14-be72-bcdce1cfbe12"
+  },
+  {
+    "id": "38e5e477-db87-0a14-9274-89f141cfbd74",
+    "title": "Slimme Sturing Batterij",
+    "summary": null,
+    "reference": "35815",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "b93785ed-46a2-01cd-ac69-7308c75537b2"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 216.98,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 433.96,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "cbb0b8da-02c9-0dfd-b55d-59b320d6b79c"
+    },
+    "created_at": "2025-05-21T05:09:46+00:00",
+    "updated_at": "2025-05-21T05:17:30+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/38e5e477-db87-0a14-9274-89f141cfbd74"
+  },
+  {
+    "id": "b71c1cee-6dfa-0ab0-8178-36f491cf96f2",
+    "title": "Voorafgaande offerte thuisbatterij Solax",
+    "summary": null,
+    "reference": "35814",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "1a330452-7056-0467-b072-1507f1488065"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 5489.61,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 10979.22,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-20T13:27:16+00:00",
+    "updated_at": "2025-05-21T07:10:41+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/b71c1cee-6dfa-0ab0-8178-36f491cf96f2"
+  },
+  {
+    "id": "dab85f4f-4639-02bb-b77e-dd4b91cf8aa2",
+    "title": "Voorafgaande offerte thuisbatterij SMA/BYD",
+    "summary": null,
+    "reference": "35813",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "1a330452-7056-0467-b072-1507f1488065"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 6774.03,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 13548.05,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-20T12:32:34+00:00",
+    "updated_at": "2025-05-21T07:15:19+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/dab85f4f-4639-02bb-b77e-dd4b91cf8aa2"
+  },
+  {
+    "id": "798e3cee-0891-0dae-8e7b-e44501cf8375",
+    "title": "Warmtepomp/Airco Fujitsu",
+    "summary": null,
+    "reference": "35812",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "a5637c8b-d801-03ef-b772-2a9bb4717c9c"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 2924.53,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 5849.06,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T11:43:07+00:00",
+    "updated_at": "2025-05-20T11:52:25+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/798e3cee-0891-0dae-8e7b-e44501cf8375"
+  },
+  {
+    "id": "4e808864-af80-0b63-ad77-e47281cf7f60",
+    "title": "Batterij-opstelling Alpha ESS 19kWh",
+    "summary": null,
+    "reference": "35811",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "97e97ef9-920f-0f8f-b661-06d5c15c3110"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4995.23,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 9990.45,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T11:25:52+00:00",
+    "updated_at": "2025-05-20T14:56:52+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/4e808864-af80-0b63-ad77-e47281cf7f60"
+  },
+  {
+    "id": "81e814d1-5d38-09c0-8777-0dc141cf7c32",
+    "title": "PV-installatie Baalsebaan Tremelo - BV B-Wile (BE 0420.298.327)",
+    "summary": null,
+    "reference": "35810",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "company",
+        "id": "50549e80-ee95-021c-8e79-a4ccf33bc16a"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 5487.5,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 10975,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "acde9355-aac8-0dc6-a24d-220a701630bc"
+    },
+    "created_at": "2025-05-20T11:12:55+00:00",
+    "updated_at": "2025-05-20T11:27:16+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/81e814d1-5d38-09c0-8777-0dc141cf7c32"
+  },
+  {
+    "id": "0262e383-a56b-0214-8471-14ed81cf710d",
+    "title": "Warmtepomp/Airco Fujitsu",
+    "summary": null,
+    "reference": "35809",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "2c330878-ead8-0b5f-b67b-8cd0228eefc3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 1008.22,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 2016.43,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T10:11:48+00:00",
+    "updated_at": "2025-05-20T10:13:24+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/0262e383-a56b-0214-8471-14ed81cf710d"
+  },
+  {
+    "id": "4099decf-8a8a-0b60-b37c-02aef1cf6b4d",
+    "title": "PV+BATT CanadianSolar/SMA - Moeremans",
+    "summary": null,
+    "reference": "35808",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "bd861afb-0e5b-00c1-a474-3934247577b7"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4811.32,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 9622.64,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "0f6c89d1-997a-036a-9557-bdf2830692ef"
+    },
+    "created_at": "2025-05-20T09:41:32+00:00",
+    "updated_at": "2025-05-20T10:30:25+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/4099decf-8a8a-0b60-b37c-02aef1cf6b4d"
+  },
+  {
+    "id": "fdd311db-2852-036d-827e-1a3f41cf69ee",
+    "title": "Warmtepomp/Airco mono-blok",
+    "summary": null,
+    "reference": "35807",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "2c330878-ead8-0b5f-b67b-8cd0228eefc3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 1924,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 3848,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T09:28:56+00:00",
+    "updated_at": "2025-05-20T10:14:36+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/fdd311db-2852-036d-827e-1a3f41cf69ee"
+  },
+  {
+    "id": "b641e9a8-7542-0081-b573-c86bf1cf6977",
+    "title": "Offerte bijplaatsen extra zonnepanelen",
+    "summary": null,
+    "reference": "35806",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "e1c4bd68-9534-0716-8c72-2f04236b5273"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 128.85,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 2577,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T09:24:29+00:00",
+    "updated_at": "2025-05-20T14:14:09+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/b641e9a8-7542-0081-b573-c86bf1cf6977"
+  },
+  {
+    "id": "4b499816-f0bb-04d6-9878-1589b1cf65ef",
+    "title": "PV+BATT CanadianSolar/Solax - Van Gemert",
+    "summary": null,
+    "reference": "35805",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "df440792-0385-0eaf-a273-d5ba347572e2"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3254.72,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6509.44,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "0f6c89d1-997a-036a-9557-bdf2830692ef"
+    },
+    "created_at": "2025-05-20T09:05:12+00:00",
+    "updated_at": "2025-05-20T09:19:52+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/4b499816-f0bb-04d6-9878-1589b1cf65ef"
+  },
+  {
+    "id": "82aaabbf-32d4-0be5-8872-4b2c71cf5c7c",
+    "title": "Vervangen energiemeter - Sels",
+    "summary": null,
+    "reference": "35804",
+    "status": "won",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "5b4915f5-67da-06d4-a671-5ecb12909919"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 200,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 200,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 1,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "e22f66e8-39d2-0af8-b24c-8125dc64967a"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": "2025-05-20T12:02:03+00:00",
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T08:01:52+00:00",
+    "updated_at": "2025-05-20T12:04:18+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/82aaabbf-32d4-0be5-8872-4b2c71cf5c7c"
+  },
+  {
+    "id": "96403066-2ecd-0bc6-857f-166bf1cf5c4a",
+    "title": "Voorafgaande offerte Huawei 10kWh thuisbatterij",
+    "summary": null,
+    "reference": "35803",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "1731f6eb-82fb-0c07-9576-cc4113e25454"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3375,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6750,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T07:59:48+00:00",
+    "updated_at": "2025-05-20T14:12:11+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/96403066-2ecd-0bc6-857f-166bf1cf5c4a"
+  },
+  {
+    "id": "edd56a79-f763-0f64-b074-4f81a1cf5a2f",
+    "title": "Batterijsysteem Solax - Cornelis",
+    "summary": null,
+    "reference": "35802",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "c093311b-8c1a-0463-ab71-f8ed34755fef"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 2948.11,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 5896.22,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "0f6c89d1-997a-036a-9557-bdf2830692ef"
+    },
+    "created_at": "2025-05-20T07:40:06+00:00",
+    "updated_at": "2025-05-20T07:48:36+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/edd56a79-f763-0f64-b074-4f81a1cf5a2f"
+  },
+  {
+    "id": "84ff4f6b-fb8f-0692-b570-e92321cf568a",
+    "title": "Batterijsysteem SolarEdge - Koeklenberg",
+    "summary": null,
+    "reference": "35801",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "14141e71-a877-000f-8672-bdafc422e98b"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3301.89,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6603.78,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-20T07:05:00+00:00",
+    "updated_at": "2025-05-20T07:16:53+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/84ff4f6b-fb8f-0692-b570-e92321cf568a"
+  },
+  {
+    "id": "a2faa44c-1245-062b-aa75-2235f1cf5447",
+    "title": "PV-installatie CanadianSolar/Solax - Polspoel",
+    "summary": null,
+    "reference": "35800",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "0b467f80-cb22-01e4-8879-7613b4717a92"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3915.1,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 7830.19,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-20T06:33:12+00:00",
+    "updated_at": "2025-05-20T11:46:27+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/a2faa44c-1245-062b-aa75-2235f1cf5447"
+  },
+  {
+    "id": "a1720ee1-637b-094f-9377-140f41cf5443",
+    "title": "Batterij-opstelling Huawei 14kWh",
+    "summary": null,
+    "reference": "35799",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "0797c35d-baa0-09c3-8461-193f55356782"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4433.06,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 8866.12,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "a0f4bf95-9830-06a6-9d56-192a9a61e00f"
+    },
+    "created_at": "2025-05-20T06:33:00+00:00",
+    "updated_at": "2025-05-20T08:52:08+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/a1720ee1-637b-094f-9377-140f41cf5443"
+  },
+  {
+    "id": "653c0002-5879-02bd-a172-227cb1cf45b8",
+    "title": "Laadstation Alfen S-Line 22kW",
+    "summary": null,
+    "reference": "35798",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "company",
+        "id": "c92d9b47-975e-0c3c-8970-acd6835c709a"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 793,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 1586,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": null,
+    "created_at": "2025-05-19T20:32:31+00:00",
+    "updated_at": "2025-05-19T20:35:26+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/653c0002-5879-02bd-a172-227cb1cf45b8"
+  },
+  {
+    "id": "471cc7a7-9d9f-0c0a-b275-153e61cf34d6",
+    "title": "LP Easee - Steger",
+    "summary": null,
+    "reference": "35797",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "04e922f0-3baf-0559-8e6c-7cbba82ddc9b"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 723.14,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 1446.28,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T14:31:19+00:00",
+    "updated_at": "2025-05-19T14:46:13+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/471cc7a7-9d9f-0c0a-b275-153e61cf34d6"
+  },
+  {
+    "id": "45802207-fd91-0eee-8a70-491c61cf34c7",
+    "title": "Voorafgaande offerte thuisbatterij SMA/BYD",
+    "summary": "\n21/05/2025\nverbruik: 8000 kwh \nPV: 8000WP \n3f net \nook offerte Solax maken \nBYD problemen met levertijden?? \n\n",
+    "reference": "35796",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "2c72757c-00a0-087f-9163-b6303d3205ca"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 538.36,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 10767.1,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T14:31:02+00:00",
+    "updated_at": "2025-05-21T11:24:24+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/45802207-fd91-0eee-8a70-491c61cf34c7"
+  },
+  {
+    "id": "aecfc43e-5675-034e-817a-2348e1cf3309",
+    "title": "Slim batterijsysteem Solax - Steger",
+    "summary": null,
+    "reference": "35795",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "04e922f0-3baf-0559-8e6c-7cbba82ddc9b"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3099.17,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6198.34,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T14:12:23+00:00",
+    "updated_at": "2025-05-19T14:31:04+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/aecfc43e-5675-034e-817a-2348e1cf3309"
+  },
+  {
+    "id": "ecf48cae-6bfc-0ed6-847b-c4ae61cf311d",
+    "title": "Uitbreiding batterij Huawei - Pauwels",
+    "summary": null,
+    "reference": "35794",
+    "status": "won",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "fe518738-42d7-0402-8677-00b322c9bb1b"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 4952.83,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 4952.83,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 1,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "e22f66e8-39d2-0af8-b24c-8125dc64967a"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": "2025-05-20T07:30:43+00:00",
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T13:56:01+00:00",
+    "updated_at": "2025-05-20T07:32:33+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/ecf48cae-6bfc-0ed6-847b-c4ae61cf311d"
+  },
+  {
+    "id": "c84e6b97-ccca-0cba-bd7d-945211cf2ac7",
+    "title": "Offerte PV-installatie",
+    "summary": null,
+    "reference": "35793",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "2e8fb22f-2669-01bb-a074-ed8e64738eef"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 236.77,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 4735.4,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-19T12:58:56+00:00",
+    "updated_at": "2025-05-20T14:07:34+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/c84e6b97-ccca-0cba-bd7d-945211cf2ac7"
+  },
+  {
+    "id": "9519fd7b-f3ba-05cd-b871-e02da1cf1a4c",
+    "title": "Retro-fit batterijsysteem SMA/BYD - Gezels",
+    "summary": null,
+    "reference": "35792",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "87ddc676-68bc-0d5b-af73-f063c35a16d3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3938.68,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 7877.35,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T10:16:30+00:00",
+    "updated_at": "2025-05-19T10:23:11+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/9519fd7b-f3ba-05cd-b871-e02da1cf1a4c"
+  },
+  {
+    "id": "5b41c470-578e-0ebd-ac75-87c811cf158b",
+    "title": "PV-installatie 2x 4050Wp (Pasbrugstraat 1)",
+    "summary": null,
+    "reference": "35791",
+    "status": "new",
+    "lead": {
+      "customer": {
+        "type": "company",
+        "id": "492bcce1-4448-0bc0-bd7b-ddbc615c3f84"
+      },
+      "contact_person": {
+        "type": "contact",
+        "id": "914c26fa-3ff4-05e1-a474-09c9b4729766"
+      }
+    },
+    "weighted_value": {
+      "amount": 297.8,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 5956,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.05,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "f1e1fae6-bb92-0680-a346-e155b0c29678"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "82fe2208-838c-0503-955a-39d4eac49a8a"
+    },
+    "created_at": "2025-05-19T09:35:41+00:00",
+    "updated_at": "2025-05-19T11:09:14+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/5b41c470-578e-0ebd-ac75-87c811cf158b"
+  },
+  {
+    "id": "3a15d3ca-6c39-0dc8-b470-78bdf1cf0e44",
+    "title": "PV Trina 455 + Omvormer/Batterij Huawei",
+    "summary": null,
+    "reference": "35790",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "378ee64a-3e05-02cb-aa7a-62096475057f"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 6745.29,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 13490.57,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "b6ab7db0-e1c7-09aa-ad5b-c5592d84adb6"
+    },
+    "created_at": "2025-05-19T08:40:02+00:00",
+    "updated_at": "2025-05-19T16:15:31+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/3a15d3ca-6c39-0dc8-b470-78bdf1cf0e44"
+  },
+  {
+    "id": "c7706c2d-fdf8-0a19-b779-6ffd41cf0d17",
+    "title": "PV Trina 455 + Omvormer Huawei",
+    "summary": null,
+    "reference": "35789",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "378ee64a-3e05-02cb-aa7a-62096475057f"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3056.23,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6112.46,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "b6ab7db0-e1c7-09aa-ad5b-c5592d84adb6"
+    },
+    "created_at": "2025-05-19T08:31:30+00:00",
+    "updated_at": "2025-05-19T16:14:36+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/c7706c2d-fdf8-0a19-b779-6ffd41cf0d17"
+  },
+  {
+    "id": "535159d4-1618-0abe-947e-1d2e91cf09a6",
+    "title": "Multi-Split Fujitsu",
+    "summary": null,
+    "reference": "35788",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "784a3b7d-5d81-08d4-9772-cd1634745e9a"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 1690,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 3380,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "aba8819e-0b88-0b62-bd5e-17845d4617de"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "70301a00-ceb9-0d54-8e43-1fb0988730a6"
+    },
+    "created_at": "2025-05-19T08:02:32+00:00",
+    "updated_at": "2025-05-21T08:48:31+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/535159d4-1618-0abe-947e-1d2e91cf09a6"
+  },
+  {
+    "id": "9397cb65-381c-0446-817c-bd4a81cf05ab",
+    "title": "Hybride batterijsysteem SMA/BYD - Gezels",
+    "summary": null,
+    "reference": "35787",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "87ddc676-68bc-0d5b-af73-f063c35a16d3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3692.93,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 7385.85,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-19T07:30:49+00:00",
+    "updated_at": "2025-05-19T10:15:52+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/9397cb65-381c-0446-817c-bd4a81cf05ab"
+  },
+  {
+    "id": "598abc14-fd9b-01f9-8e77-b5a791ceff52",
+    "title": "LP SolarEdge - De Pelsmaeker",
+    "summary": null,
+    "reference": "35786",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "9968e9cd-344f-00ee-ac75-1ea4547425d7"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 1226.42,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 2452.83,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "7d1e5bdb-c9c9-0acf-9153-4428e471d83d"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "0f6c89d1-997a-036a-9557-bdf2830692ef"
+    },
+    "created_at": "2025-05-19T06:16:28+00:00",
+    "updated_at": "2025-05-19T06:41:00+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "09f9850c-113b-025e-a649-5f3917ea27d0"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/598abc14-fd9b-01f9-8e77-b5a791ceff52"
+  },
+  {
+    "id": "3e8ef1b9-6f99-01df-847c-d181e1cee878",
+    "title": "Uitbreiding pv-installatie 2125Wp",
+    "summary": null,
+    "reference": "35785",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "83734b33-f1d0-0bd9-b074-0349a474d49d"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 932,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 1864,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "c99d3811-d3bb-0038-9d41-b2050bf03cb5"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "a0f4bf95-9830-06a6-9d56-192a9a61e00f"
+    },
+    "created_at": "2025-05-17T07:53:38+00:00",
+    "updated_at": "2025-05-17T08:05:48+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/3e8ef1b9-6f99-01df-847c-d181e1cee878"
+  },
+  {
+    "id": "fef5277c-8b66-0941-8c74-c673c1ced513",
+    "title": "Voorafgaande offerte Solax thuisbatterij",
+    "summary": null,
+    "reference": "35784",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "589a493f-4f04-041e-846a-0cc195ac0f01"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3207.55,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 6415.09,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "90521241-c8ad-0f77-a94c-94d5fb5e1acf"
+    },
+    "created_at": "2025-05-16T12:28:21+00:00",
+    "updated_at": "2025-05-19T12:16:38+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/fef5277c-8b66-0941-8c74-c673c1ced513"
+  },
+  {
+    "id": "97266bec-a3eb-05d0-8b7e-a32531ced00f",
+    "title": "Offerte PV-installatie",
+    "summary": null,
+    "reference": "35783",
+    "status": "open",
+    "lead": {
+      "customer": {
+        "type": "contact",
+        "id": "1bc70459-ced1-0bf8-8570-61eca46f4af3"
+      },
+      "contact_person": null
+    },
+    "weighted_value": {
+      "amount": 3584.91,
+      "currency": "EUR"
+    },
+    "purchase_order_number": null,
+    "estimated_value": {
+      "amount": 7169.81,
+      "currency": "EUR"
+    },
+    "estimated_closing_date": null,
+    "estimated_probability": 0.5,
+    "current_phase": {
+      "type": "dealPhase",
+      "id": "95f3a7df-063d-0f70-be4b-3f90d11d9679"
+    },
+    "responsible_user": {
+      "type": "user",
+      "id": "ab0d58b1-7078-0ca3-994a-e3a7eb7f9bac"
+    },
+    "closed_at": null,
+    "source": {
+      "type": "dealSource",
+      "id": "44b859fb-aa55-0953-9f46-31a1f4072297"
+    },
+    "created_at": "2025-05-16T11:27:45+00:00",
+    "updated_at": "2025-05-19T12:24:37+00:00",
+    "lost_reason": null,
+    "pipeline": {
+      "type": "dealPipeline",
+      "id": "235e284c-d0cd-08f0-b331-3205059bd21a"
+    },
+    "currency_exchange_rate": {
+      "from": "EUR",
+      "to": "EUR",
+      "rate": 1
+    },
+    "department": {
+      "type": "department",
+      "id": "7c1caf17-0b54-01c3-894f-6f129e6a2ba5"
+    },
+    "web_url": "https://focus.teamleader.eu/web/deals/97266bec-a3eb-05d0-8b7e-a32531ced00f"
+  }
+]
