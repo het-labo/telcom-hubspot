@@ -326,78 +326,81 @@ async function syncDealsToHubspot(deals) {
 		console.log(contactEmail);
 
 		if (contactEmail) {
-		try {
-			// First, search for the contact by email
-			const searchRes = await hubspot.post('/crm/v3/objects/contacts/search', {
-			filterGroups: [{
-				filters: [{
-				propertyName: 'email',
-				operator: 'EQ',
-				value: contactEmail
-				}]
-			}],
-			properties: ['email']
-			});
-			if (searchRes.data.results.length > 0) {
-			// Contact exists, update it
-			hubspotContactId = searchRes.data.results[0].id;
-			await hubspot.patch(`/crm/v3/objects/contacts/${hubspotContactId}`, {
-				properties: {
-				email: contactEmail,
-				firstname: contact.first_name || contact.firstname,
-				lastname: contact.last_name || contact.lastname,
-				phone: contact.telephone || contact.phone,
-				// Add more mappings as needed
-				hs_marketable_status: marketingStatus || ''
+			try {
+				// First, search for the contact by email
+				const searchRes = await hubspot.post('/crm/v3/objects/contacts/search', {
+					filterGroups: [{
+						filters: [{
+							propertyName: 'email',
+							operator: 'EQ',
+							value: contactEmail
+						}]
+					}],
+					properties: ['email']
+				});
+
+				if (searchRes.data.results.length > 0) {
+					// Contact exists, update it
+					hubspotContactId = searchRes.data.results[0].id;
+					await hubspot.patch(`/crm/v3/objects/contacts/${hubspotContactId}`, {
+						properties: {
+						email: contactEmail,
+						firstname: contact.first_name || contact.firstname,
+						lastname: contact.last_name || contact.lastname,
+						phone: contact.telephone || contact.phone,
+						// Add more mappings as needed
+						hs_marketable_status: marketingStatus || ''
+						}
+					});
+				} else {
+					// Contact does not exist, create it
+					const contactRes = await hubspot.post('/crm/v3/objects/contacts', {
+						properties: {
+						email: contactEmail,
+						firstname: contact.first_name || contact.firstname,
+						lastname: contact.last_name || contact.lastname,
+						phone: contact.telephone || contact.phone,
+						// Add more mappings as needed
+						}
+					});
+					hubspotContactId = contactRes.data.id;
 				}
-			});
-			} else {
-			// Contact does not exist, create it
-			const contactRes = await hubspot.post('/crm/v3/objects/contacts', {
-				properties: {
-				email: contactEmail,
-				firstname: contact.first_name || contact.firstname,
-				lastname: contact.last_name || contact.lastname,
-				phone: contact.telephone || contact.phone,
-				// Add more mappings as needed
-				}
-			});
-			hubspotContactId = contactRes.data.id;
+			} catch (error) {
+				console.error('❌ Error syncing contact:', contactEmail, error.response?.data || error.message);
 			}
-		} catch (error) {
-			console.error('❌ Error syncing contact:', contactEmail, error.response?.data || error.message);
-		}
 		}
 
 		// 2. Sync deal to HubSpot (search, update or create)
 		const hubspotDeal = mapTeamleaderDealToHubspot(deal);
 		let hubspotDealId = null;
+
 		try {
-		// Search for the deal by name (and optionally other unique properties)
-		const dealSearchRes = await hubspot.post('/crm/v3/objects/deals/search', {
-			filterGroups: [{
-			filters: [{ 
-				propertyName: 'dealname',
-				operator: 'EQ',
-				value: hubspotDeal.properties.dealname
-			}]
-			}],
-			properties: ['dealname']
-		});
-		if (dealSearchRes.data.results.length > 0) {
-			// Deal exists, update it
-			hubspotDealId = dealSearchRes.data.results[0].id;
-			await hubspot.patch(`/crm/v3/objects/deals/${hubspotDealId}`, hubspotDeal);
-			console.log('🔄 Updated deal in HubSpot:', hubspotDealId, hubspotDeal.properties.dealname);
-		} else {
-			// Deal does not exist, create it
-			const response = await hubspot.post('/crm/v3/objects/deals', hubspotDeal);
-			hubspotDealId = response.data.id;
-			console.log('✅ Created deal in HubSpot:', hubspotDealId, hubspotDeal.properties.dealname);
-		}
+			// Search for the deal by name (and optionally other unique properties)
+			const dealSearchRes = await hubspot.post('/crm/v3/objects/deals/search', {
+				filterGroups: [{
+					filters: [{ 
+						propertyName: 'dealname',
+						operator: 'EQ',
+						value: hubspotDeal.properties.dealname
+					}]
+				}],
+				properties: ['dealname']
+			});
+
+			if (dealSearchRes.data.results.length > 0) {
+				// Deal exists, update it
+				hubspotDealId = dealSearchRes.data.results[0].id;
+				await hubspot.patch(`/crm/v3/objects/deals/${hubspotDealId}`, hubspotDeal);
+				console.log('🔄 Updated deal in HubSpot:', hubspotDealId, hubspotDeal.properties.dealname);
+			} else {
+				// Deal does not exist, create it
+				const response = await hubspot.post('/crm/v3/objects/deals', hubspotDeal);
+				hubspotDealId = response.data.id;
+				console.log('✅ Created deal in HubSpot:', hubspotDealId, hubspotDeal.properties.dealname);
+			}
 		} catch (error) {
-		console.error('❌ Error syncing deal:', hubspotDeal.properties.dealname, error.response?.data || error.message);
-		continue; // Skip association if deal creation failed
+			console.error('❌ Error syncing deal:', hubspotDeal.properties.dealname, error.response?.data || error.message);
+			continue; // Skip association if deal creation failed
 		}
 
 		// ...after creating/updating deal...
@@ -405,17 +408,16 @@ async function syncDealsToHubspot(deals) {
 
 		// 3. Associate contact with deal in HubSpot
 		if (hubspotContactId && hubspotDealId) {
-		try {
-			await hubspot.put(`/crm/v3/objects/deals/${hubspotDealId}/associations/contacts/${hubspotContactId}/deal_to_contact`, {});
-			console.log(`🔗 Associated contact (${hubspotContactId}) with deal (${hubspotDealId})`);
-		} catch (assocErr) {
-			console.error('❌ Error associating contact with deal:', assocErr.response?.data || assocErr.message);
-		}
+			try {
+				await hubspot.put(`/crm/v3/objects/deals/${hubspotDealId}/associations/contacts/${hubspotContactId}/deal_to_contact`, {});
+				console.log(`🔗 Associated contact (${hubspotContactId}) with deal (${hubspotDealId})`);
+			} catch (assocErr) {
+				console.error('❌ Error associating contact with deal:', assocErr.response?.data || assocErr.message);
+			}
 		}
 
 		// ...after associating contact...
 		console.log(`Associated contact ${hubspotContactId} with deal ${hubspotDealId}`);
-
 	}
 }
 
