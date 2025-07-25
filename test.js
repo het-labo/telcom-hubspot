@@ -322,6 +322,9 @@ async function syncDealsToHubspot(deals) {
                 console.error('❌ Error associating company with deal:', assocErr.response?.data || assocErr.message);
             }
         }
+
+        // await new Promise(res => setTimeout(res, 300)); // 300ms delay, might work to bypass rate limits
+        // Uncomment the above line if you encounter rate limiting issues with HubSpot API
     }
 }
 
@@ -338,14 +341,20 @@ app.get('/callback', async (req, res) => {
 
     try {
         const accessToken = await fetchAccessToken(code);
-        const START_PAGE = 3100; // Start scanning from this page | Nick: Started from 750, 1500, 3000 |
-        const TOTAL_PAGES = 3221; // Total number of pages to scan (from Teamleader)
-        const SIZE = 10;
+
+        const startPage = parseInt(process.env.START_PAGE) || 1500; // Default to 1500 if not set
+        const totalPages = parseInt(process.env.TOTAL_PAGES) || 3221; // Default to 3221 if not set
+        const recordsPerPage = parseInt(process.env.RECORDS_PER_PAGE) || 10; // Default to SIZE if not set
         
         let allDealsWithPipeline = [];
 
-        for (let pageNumber = START_PAGE; pageNumber <= TOTAL_PAGES; pageNumber++) {
-            const deals = await fetchDeals(accessToken, pageNumber, SIZE);
+        for (let pageNumber = startPage; pageNumber <= totalPages; pageNumber++) {
+            console.log(`
+===============================
+🔄 Processing page ${pageNumber} of ${totalPages}
+===============================
+            `);
+            const deals = await fetchDeals(accessToken, pageNumber, recordsPerPage);
 
             // Fetch phases
             const phaseIds = [...new Set(deals.map(deal => deal.current_phase && deal.current_phase.id).filter(Boolean))];
