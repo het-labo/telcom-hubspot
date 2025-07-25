@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3000/callback';
@@ -280,15 +280,17 @@ async function syncDealsToHubspot(deals) {
         if (company && company.name) {
             try {
                 // Search for company by name (or use a more unique property if available)
+                let companyFilter = [];
+                if (company.vat_number) {
+                    companyFilter.push({ propertyName: 'vat_number', operator: 'EQ', value: company.vat_number });
+                } else if (company.domain) {
+                    companyFilter.push({ propertyName: 'domain', operator: 'EQ', value: company.domain });
+                } else {
+                    companyFilter.push({ propertyName: 'name', operator: 'EQ', value: company.name });
+                }
                 const companySearchRes = await hubspot.post('/crm/v3/objects/companies/search', {
-                    filterGroups: [{
-                        filters: [{
-                            propertyName: 'name',
-                            operator: 'EQ',
-                            value: company.name
-                        }]
-                    }],
-                    properties: ['name']
+                    filterGroups: [{ filters: companyFilter }],
+                    properties: ['name', 'vat_number', 'domain']
                 });
 
                 if (companySearchRes.data.results.length > 0) {
@@ -365,40 +367,68 @@ app.get('/callback', async (req, res) => {
             // Fetch details for each deal
             const dealsWithAllDetails = [];
             for (const deal of deals) {
-                let customerDetails = null;
                 let contactDetails = null;
+                let companyDetails = null;
                 let responsibleUserDetails = null;
 
-                // Check for contact_person first
+                // 1. Try deal.lead.contact_person
                 const contactPersonId = deal.lead.contact_person?.id;
                 if (contactPersonId) {
                     contactDetails = await fetchContact(accessToken, contactPersonId);
                 }
 
-                // If no contact_person, check if lead.customer is a contact
+                // 2. Try deal.lead.customer if it's a contact
                 if (!contactDetails && deal.lead.customer?.type === 'contact') {
                     contactDetails = await fetchContact(accessToken, deal.lead.customer.id);
                 }
 
-                // If lead.customer is a company, fetch company details
-                if (deal.lead.customer?.type === 'company') {
-                    customerDetails = await fetchCompany(accessToken, deal.lead.customer.id);
-                    // Optionally, fetch contacts linked to this company if needed
-                    // Example: customerDetails.contacts?.[0]?.id
+                // 3. Try deal.customer_details.contact_id
+                if (!contactDetails && deal.customer_details?.contact_id) {
+                    contactDetails = await fetchContact(accessToken, deal.customer_details.contact_id);
                 }
 
-                // Always fetch responsible user details
+                // 4. Try deal.contact_id
+                if (!contactDetails && deal.contact_id) {
+                    contactDetails = await fetchContact(accessToken, deal.contact_id);
+                }
+
+                // 5. Log if still missing
+                if (!contactDetails) {
+                    console.warn('⚠️ No contact found for deal:', deal.id, JSON.stringify(deal, null, 2));
+                }
+
+                // 3. Try to fetch company via deal.lead.customer if it's a company
+                if (deal.lead.customer?.type === 'company') {
+                    companyDetails = await fetchCompany(accessToken, deal.lead.customer.id);
+                }
+
+                // 4. Fallback: If contact has company_id, fetch that company
+                if (!companyDetails && contactDetails && contactDetails.company_id) {
+                    companyDetails = await fetchCompany(accessToken, contactDetails.company_id);
+                }
+
+                // 5. Fallback: If deal has company_id directly, fetch that company
+                if (!companyDetails && deal.company_id) {
+                    companyDetails = await fetchCompany(accessToken, deal.company_id);
+                }
+
+                // 6. Fallback: If deal has customer_details with company_id
+                if (!companyDetails && deal.customer_details?.company_id) {
+                    companyDetails = await fetchCompany(accessToken, deal.customer_details.company_id);
+                }
+
+                // 7. Fetch responsible user details if available
                 if (deal.responsible_user?.id) {
                     responsibleUserDetails = await fetchUser(accessToken, deal.responsible_user.id);
                 }
 
                 dealsWithAllDetails.push({
                     ...deal,
+                    contact_details: contactDetails,
+                    company_details: companyDetails,
                     current_phase_details: phaseMap[deal.current_phase?.id] || null,
-                    customer_details: customerDetails, // company details if company, null otherwise
-                    contact_details: contactDetails,   // contact details if contact, null otherwise
                     responsible_user_details: responsibleUserDetails,
-                    company_details: customerDetails   // keep for compatibility, same as above if company
+                    customer_details: companyDetails // for compatibility
                 });
             }
 
