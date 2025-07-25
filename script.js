@@ -161,6 +161,7 @@ function mapTeamleaderDealToHubspot(deal) {
             amount: deal.estimated_value?.amount ? String(deal.estimated_value.amount) : undefined,
             pipeline: 'default',
             dealstage: mapTeamleaderStatusToHubspotStage(deal.status, deal.current_phase_details?.name),
+            deal_status: deal.status,
             dealtype: determineDealType(deal),
             deal_last_update: deal.updated_at,
             createdate: deal.created_at,
@@ -188,8 +189,8 @@ async function syncDealsToHubspot(deals) {
 
         // Sync contact
         let hubspotContactId = null;
-        const contact = deal.customer_details;
-        let contactEmail = Array.isArray(contact.emails) && contact.emails.length > 0
+        const contact = deal.contact_details;
+        let contactEmail = Array.isArray(contact?.emails) && contact.emails.length > 0
             ? contact.emails.find(c => c.type === 'primary')?.email || contact.emails[0].email
             : undefined;
 
@@ -272,6 +273,55 @@ async function syncDealsToHubspot(deals) {
                 console.error('❌ Error associating contact with deal:', assocErr.response?.data || assocErr.message);
             }
         }
+
+        // Sync company
+        let hubspotCompanyId = null;
+        const company = deal.company_details;
+        if (company && company.name) {
+            try {
+                // Search for company by name (or use a more unique property if available)
+                const companySearchRes = await hubspot.post('/crm/v3/objects/companies/search', {
+                    filterGroups: [{
+                        filters: [{
+                            propertyName: 'name',
+                            operator: 'EQ',
+                            value: company.name
+                        }]
+                    }],
+                    properties: ['name']
+                });
+
+                if (companySearchRes.data.results.length > 0) {
+                    hubspotCompanyId = companySearchRes.data.results[0].id;
+                    await hubspot.patch(`/crm/v3/objects/companies/${hubspotCompanyId}`, {
+                        properties: {
+                            name: company.name,
+                            // Add more mappings if needed (domain, vat, etc.)
+                        }
+                    });
+                } else {
+                    const companyRes = await hubspot.post('/crm/v3/objects/companies', {
+                        properties: {
+                            name: company.name,
+                            // Add more mappings if needed
+                        }
+                    });
+                    hubspotCompanyId = companyRes.data.id;
+                }
+            } catch (error) {
+                console.error('❌ Error syncing company:', company.name, error.response?.data || error.message);
+            }
+        }
+
+        // Associate deal with company in HubSpot
+        if (hubspotCompanyId && hubspotDealId) {
+            try {
+                await hubspot.put(`/crm/v3/objects/deals/${hubspotDealId}/associations/companies/${hubspotCompanyId}/deal_to_company`, {});
+                console.log(`🔗 Associated company (${hubspotCompanyId}) with deal (${hubspotDealId})`);
+            } catch (assocErr) {
+                console.error('❌ Error associating company with deal:', assocErr.response?.data || assocErr.message);
+            }
+        }
     }
 }
 
@@ -288,11 +338,13 @@ app.get('/callback', async (req, res) => {
 
     try {
         const accessToken = await fetchAccessToken(code);
+        const START_PAGE = 3100; // Start scanning from this page | Nick: Started from 750, 1500, 3000 |
+        const TOTAL_PAGES = 3221; // Total number of pages to scan (from Teamleader)
         const SIZE = 10;
-        const totalPages = 3221;
+        
         let allDealsWithPipeline = [];
 
-        for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+        for (let pageNumber = START_PAGE; pageNumber <= TOTAL_PAGES; pageNumber++) {
             const deals = await fetchDeals(accessToken, pageNumber, SIZE);
 
             // Fetch phases
@@ -304,21 +356,40 @@ app.get('/callback', async (req, res) => {
             // Fetch details for each deal
             const dealsWithAllDetails = [];
             for (const deal of deals) {
-                const customerDetails = await fetchContact(accessToken, deal.lead.customer?.id);
-                const responsibleUserDetails = await fetchUser(accessToken, deal.responsible_user?.id);
+                let customerDetails = null;
+                let contactDetails = null;
+                let responsibleUserDetails = null;
 
-                let companyDetails = null;
-                const companies = customerDetails?.companies || [];
-                if (companies.length > 0) {
-                    companyDetails = await fetchCompany(accessToken, companies[0].id);
+                // Check for contact_person first
+                const contactPersonId = deal.lead.contact_person?.id;
+                if (contactPersonId) {
+                    contactDetails = await fetchContact(accessToken, contactPersonId);
+                }
+
+                // If no contact_person, check if lead.customer is a contact
+                if (!contactDetails && deal.lead.customer?.type === 'contact') {
+                    contactDetails = await fetchContact(accessToken, deal.lead.customer.id);
+                }
+
+                // If lead.customer is a company, fetch company details
+                if (deal.lead.customer?.type === 'company') {
+                    customerDetails = await fetchCompany(accessToken, deal.lead.customer.id);
+                    // Optionally, fetch contacts linked to this company if needed
+                    // Example: customerDetails.contacts?.[0]?.id
+                }
+
+                // Always fetch responsible user details
+                if (deal.responsible_user?.id) {
+                    responsibleUserDetails = await fetchUser(accessToken, deal.responsible_user.id);
                 }
 
                 dealsWithAllDetails.push({
                     ...deal,
                     current_phase_details: phaseMap[deal.current_phase?.id] || null,
-                    customer_details: customerDetails,
+                    customer_details: customerDetails, // company details if company, null otherwise
+                    contact_details: contactDetails,   // contact details if contact, null otherwise
                     responsible_user_details: responsibleUserDetails,
-                    company_details: companyDetails
+                    company_details: customerDetails   // keep for compatibility, same as above if company
                 });
             }
 
@@ -360,6 +431,7 @@ app.get('/callback', async (req, res) => {
         }
 
         res.send(`<pre>${JSON.stringify(allDealsWithPipeline, null, 2)}</pre>`);
+        console.log('✅ Sync finished. All deals processed and sent to browser.');
     } catch (err) {
         res.status(500).send('Error: ' + (err.response ? JSON.stringify(err.response.data) : err.message));
     }
