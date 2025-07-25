@@ -2,7 +2,6 @@ const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
 
-
 const PORT = 3000;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -32,14 +31,15 @@ app.get('/callback', async (req, res) => {
 	try {
 		// Exchange code for access token
 		const tokenRes = await axios.post('https://app.teamleader.eu/oauth2/access_token', null, {
-		params: {
-			grant_type: 'authorization_code',
-			code,
-			client_id: CLIENT_ID,
-			client_secret: CLIENT_SECRET,
-			redirect_uri: REDIRECT_URI
-		}
+			params: {
+				grant_type: 'authorization_code',
+				code,
+				client_id: CLIENT_ID,
+				client_secret: CLIENT_SECRET,
+				redirect_uri: REDIRECT_URI
+			}
 		});
+
 		const accessToken = tokenRes.data.access_token;
 
 		const SIZE = 10;
@@ -49,22 +49,21 @@ app.get('/callback', async (req, res) => {
 
 		for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
 
-		const dealsData = JSON.stringify({
-			filter: {},
-			page: { size: SIZE, number: pageNumber },
-			sort: [{ field: "created_at", order: "desc" }]
-		});
+			const dealsData = JSON.stringify({
+				filter: {},
+				page: { size: SIZE, number: pageNumber },
+				sort: [{ field: "created_at", order: "desc" }]
+			});
 
-		const dealsRes = await axios.post(
-			'https://api.focus.teamleader.eu/deals.list',
-			dealsData,
-			{
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${accessToken}`
-			}
-			}
+			const dealsRes = await axios.post(
+				'https://api.focus.teamleader.eu/deals.list',
+				dealsData, {
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+						'Authorization': `Bearer ${accessToken}`
+					}
+				}
 		);
 
 		const deals = dealsRes.data.data || [];
@@ -81,26 +80,26 @@ app.get('/callback', async (req, res) => {
 		let phases = [];
 		if (phaseIds.length > 0) {
 			const phasesData = JSON.stringify({
-			filter: { ids: phaseIds },
-			page: { size: phaseIds.length, number: 1 }
+				filter: { ids: phaseIds },
+				page: { size: phaseIds.length, number: 1 }
 			});
 
 			const phasesRes = await axios.post(
-			'https://api.focus.teamleader.eu/dealPhases.list',
-			phasesData,
-			{
-				headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${accessToken}`
+				'https://api.focus.teamleader.eu/dealPhases.list',
+				phasesData, {
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+						'Authorization': `Bearer ${accessToken}`
+					}
 				}
-			}
 			);
 			phases = phasesRes.data.data || [];
 		}
 
 		// Map phase info to deals
 		const phaseMap = {};
+
 		phases.forEach(phase => {
 			phaseMap[phase.id] = phase;
 		});
@@ -113,58 +112,58 @@ app.get('/callback', async (req, res) => {
 
 			// Fetch customer details
 			const customerId = deal.lead.customer?.id;
+
 			if (customerId) {
-			try {
-				const contactRes = await axios.post(
-				'https://api.focus.teamleader.eu/contacts.info',
-				JSON.stringify({ id: customerId }),
-				{
-					headers: {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-					'Authorization': `Bearer ${accessToken}`
-					}
+				try {
+					const contactRes = await axios.post(
+						'https://api.focus.teamleader.eu/contacts.info',
+						JSON.stringify({ id: customerId }), {
+							headers: {
+								'Content-Type': 'application/json',
+								'Accept': 'application/json',
+								'Authorization': `Bearer ${accessToken}`
+							}
+						}
+					);
+					customerDetails = contactRes.data.data || null;
+				} catch (e) {
+					customerDetails = { error: e.response?.data || e.message };
 				}
-				);
-				customerDetails = contactRes.data.data || null;
-			} catch (e) {
-				customerDetails = { error: e.response?.data || e.message };
-			}
 			}
 
 			// Fetch responsible user details
 			const responsibleUserId = deal.responsible_user?.id;
+
 			if (responsibleUserId) {
-			try {
-				const userRes = await axios.post(
-				'https://api.focus.teamleader.eu/users.info',
-				JSON.stringify({ id: responsibleUserId, includes: "external_rate" }),
-				{
-					headers: {
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-					'Authorization': `Bearer ${accessToken}`
-					}
+				try {
+					const userRes = await axios.post(
+						'https://api.focus.teamleader.eu/users.info',
+						JSON.stringify({ id: responsibleUserId, includes: "external_rate" }), {
+							headers: {
+							'Content-Type': 'application/json',
+							'Accept': 'application/json',
+							'Authorization': `Bearer ${accessToken}`
+							}
+						}
+					);
+					responsibleUserDetails = userRes.data.data || null;
+				} catch (e) {
+					responsibleUserDetails = { error: e.response?.data || e.message };
 				}
-				);
-				responsibleUserDetails = userRes.data.data || null;
-			} catch (e) {
-				responsibleUserDetails = { error: e.response?.data || e.message };
-			}
 			}
 
 			dealsWithAllDetails.push({
-			...deal,
-			current_phase_details: phaseMap[deal.current_phase?.id] || null,
-			customer_details: customerDetails,
-			responsible_user_details: responsibleUserDetails
+				...deal,
+				current_phase_details: phaseMap[deal.current_phase?.id] || null,
+				customer_details: customerDetails,
+				responsible_user_details: responsibleUserDetails
 			});
 		}
 
 		// 1. Collect unique pipeline IDs from deals
 		const pipelineIds = [
 			...new Set(
-			deals.map(deal => deal.pipeline && deal.pipeline.id).filter(Boolean)
+				deals.map(deal => deal.pipeline && deal.pipeline.id).filter(Boolean)
 			)
 		];
 
@@ -172,26 +171,26 @@ app.get('/callback', async (req, res) => {
 		let pipelines = [];
 		if (pipelineIds.length > 0) {
 			const pipelinesData = JSON.stringify({
-			filter: { ids: pipelineIds },
-			page: { size: pipelineIds.length, number: 1 }
+				filter: { ids: pipelineIds },
+				page: { size: pipelineIds.length, number: 1 }
 			});
 
 			const pipelinesRes = await axios.post(
-			'https://api.focus.teamleader.eu/dealPipelines.list',
-			pipelinesData,
-			{
-				headers: {
-				'Content-Type': 'application/json',
-				'Accept': 'application/json',
-				'Authorization': `Bearer ${accessToken}`
+				'https://api.focus.teamleader.eu/dealPipelines.list',
+				pipelinesData, {
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+						'Authorization': `Bearer ${accessToken}`
+					}
 				}
-			}
 			);
 			pipelines = pipelinesRes.data.data || [];
 		}
 
 		// 3. Map pipeline info to deals
 		const pipelineMap = {};
+
 		pipelines.forEach(pipeline => {
 			pipelineMap[pipeline.id] = pipeline;
 		});
@@ -206,8 +205,6 @@ app.get('/callback', async (req, res) => {
 
 		// Print to console
 		console.log(JSON.stringify(dealsWithPipeline, null, 2));
-
-		
 
 		// Sync deals to HubSpot
 		await syncDealsToHubspot(dealsWithPipeline);
@@ -273,17 +270,20 @@ function mapTeamleaderDealToHubspot(deal) {
 	console.log(deal);
 	return {
 		properties: {
-		dealname: deal.title || 'Teamleader Deal',
-		description: deal.summary || '',
-		amount: deal.estimated_value?.amount ? String(deal.estimated_value.amount) : undefined,
-		//closedate: deal.closed_at || deal.estimated_closing_date || Date.now(), // bestaat niet in teamleader
-		pipeline: 'default',
-		dealstage: mapTeamleaderStatusToHubspotStage(deal.status, deal.current_phase_details?.name),
-		dealtype: determineDealType(deal),
-		//description: deal.description || '', // bestaat niet in teamleader
-		//hs_createdate: deal.created_at || Date.now(),
-		//hs_lastmodifieddate: deal.updated_at || Date.now(), // niet nodig? aangezien we deal_last_update gebruiken
-		deal_last_update: deal.updated_at
+			dealname: deal.title || 'Teamleader Deal',
+			description: deal.summary || '',
+			amount: deal.estimated_value?.amount ? String(deal.estimated_value.amount) : undefined,
+			//closedate: deal.closed_at || deal.estimated_closing_date || Date.now(), // bestaat niet in teamleader
+			pipeline: 'default',
+			dealstage: mapTeamleaderStatusToHubspotStage(deal.status, deal.current_phase_details?.name),
+			dealtype: determineDealType(deal),
+			//description: deal.description || '', // bestaat niet in teamleader
+			//hs_createdate: deal.created_at || Date.now(),
+			//hs_lastmodifieddate: deal.updated_at || Date.now(), // niet nodig? aangezien we deal_last_update gebruiken
+			deal_last_update: deal.updated_at,
+			createdate: deal.created_at,
+			closedate: deal.closed_at,
+			teamleader_web_url: deal.web_url
 		}
 	};
 }
@@ -300,16 +300,16 @@ async function syncDealsToHubspot(deals) {
 
 		const updatedAt = deal.updated_at ? new Date(deal.updated_at) : null;
 		if (!updatedAt || updatedAt < fiveYearsAgo) {
-		// Skip deals older than 5 years
-		continue;
+			// Skip deals older than 5 years
+			continue;
 		}
 
 		// Determine marketing contact status
 		let marketingStatus = undefined;
 		if (updatedAt > twoYearsAgo) {
-		marketingStatus = true;
+			marketingStatus = true;
 		} else {
-		marketingStatus = false;
+			marketingStatus = false;
 		}
 
 
@@ -344,23 +344,23 @@ async function syncDealsToHubspot(deals) {
 					hubspotContactId = searchRes.data.results[0].id;
 					await hubspot.patch(`/crm/v3/objects/contacts/${hubspotContactId}`, {
 						properties: {
-						email: contactEmail,
-						firstname: contact.first_name || contact.firstname,
-						lastname: contact.last_name || contact.lastname,
-						phone: contact.telephone || contact.phone,
-						// Add more mappings as needed
-						hs_marketable_status: marketingStatus || ''
+							email: contactEmail,
+							firstname: contact.first_name || contact.firstname,
+							lastname: contact.last_name || contact.lastname,
+							phone: contact.telephone || contact.phone,
+							// Add more mappings as needed
+							hs_marketable_status: marketingStatus || ''
 						}
 					});
 				} else {
 					// Contact does not exist, create it
 					const contactRes = await hubspot.post('/crm/v3/objects/contacts', {
 						properties: {
-						email: contactEmail,
-						firstname: contact.first_name || contact.firstname,
-						lastname: contact.last_name || contact.lastname,
-						phone: contact.telephone || contact.phone,
-						// Add more mappings as needed
+							email: contactEmail,
+							firstname: contact.first_name || contact.firstname,
+							lastname: contact.last_name || contact.lastname,
+							phone: contact.telephone || contact.phone,
+							// Add more mappings as needed
 						}
 					});
 					hubspotContactId = contactRes.data.id;
