@@ -338,11 +338,13 @@ app.get('/callback', async (req, res) => {
 
     try {
         const accessToken = await fetchAccessToken(code);
+        const START_PAGE = 3100; // Start scanning from this page | Nick: Started from 750, 1500, 3000 |
+        const TOTAL_PAGES = 3221; // Total number of pages to scan (from Teamleader)
         const SIZE = 10;
-        const totalPages = 3221;
+        
         let allDealsWithPipeline = [];
 
-        for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+        for (let pageNumber = START_PAGE; pageNumber <= TOTAL_PAGES; pageNumber++) {
             const deals = await fetchDeals(accessToken, pageNumber, SIZE);
 
             // Fetch phases
