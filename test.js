@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const fs = require('fs');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,22 @@ const hubspot = axios.create({
     },
     timeout: 60000,
 });
+
+// --- Progress tracking helpers ---
+// const PROGRESS_FILE = './progress.json';
+
+// // Helper to save progress
+// function saveProgress(pageNumber) {
+//     fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ lastPage: pageNumber }), 'utf8');
+// }
+
+// // Helper to load progress
+// function loadProgress() {
+//     if (fs.existsSync(PROGRESS_FILE)) {
+//         return JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8')).lastPage;
+//     }
+//     return null;
+// }
 
 // --- Helper functions ---
 
@@ -298,20 +315,30 @@ async function syncDealsToHubspot(deals) {
                     await hubspot.patch(`/crm/v3/objects/companies/${hubspotCompanyId}`, {
                         properties: {
                             name: company.name,
-                            // Add more mappings if needed (domain, vat, etc.)
+                            vat_number: company.vat_number || '',
+                            domain: company.domain || ''
+                            // ...other mappings
                         }
                     });
                 } else {
                     const companyRes = await hubspot.post('/crm/v3/objects/companies', {
                         properties: {
                             name: company.name,
+                            vat_number: company.vat_number || '',
+                            domain: company.domain || ''
                             // Add more mappings if needed
                         }
                     });
                     hubspotCompanyId = companyRes.data.id;
                 }
             } catch (error) {
-                console.error('❌ Error syncing company:', company.name, error.response?.data || error.message);
+                console.error(
+                    '❌ Error syncing company:', 
+                    company.name, 
+                    JSON.stringify(error.response?.data, null, 2), 
+                    error.response?.data?.errors, 
+                    error.response?.data?.validationResults
+                );
             }
         }
 
@@ -344,11 +371,19 @@ app.get('/callback', async (req, res) => {
     try {
         const accessToken = await fetchAccessToken(code);
 
+        // Remove progress file logic
         const startPage = parseInt(process.env.START_PAGE) || 1500; // Default to 1500 if not set
         const totalPages = parseInt(process.env.TOTAL_PAGES) || 3221; // Default to 3221 if not set
         const recordsPerPage = parseInt(process.env.RECORDS_PER_PAGE) || 10; // Default to SIZE if not set
         
         let allDealsWithPipeline = [];
+
+        // Remove progress loading
+        // let lastProcessedPage = loadProgress();
+        // if (lastProcessedPage) {
+        //     console.log(`Resuming from last processed page: ${lastProcessedPage}`);
+        //     startPage = lastProcessedPage;
+        // }
 
         for (let pageNumber = startPage; pageNumber <= totalPages; pageNumber++) {
             console.log(`
@@ -467,6 +502,9 @@ app.get('/callback', async (req, res) => {
 
             // Sync deals to HubSpot
             await syncDealsToHubspot(dealsWithPipeline);
+
+            // Remove progress saving
+            // saveProgress(pageNumber);
         }
 
         res.send(`<pre>${JSON.stringify(allDealsWithPipeline, null, 2)}</pre>`);
