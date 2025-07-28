@@ -1,8 +1,9 @@
 const express = require('express');
 const axios = require('axios');
+const fs = require('fs');
 require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI || 'http://localhost:3000/callback';
@@ -18,6 +19,22 @@ const hubspot = axios.create({
     },
     timeout: 60000,
 });
+
+// --- Progress tracking helpers ---
+// const PROGRESS_FILE = './progress.json';
+
+// // Helper to save progress
+// function saveProgress(pageNumber) {
+//     fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ lastPage: pageNumber }), 'utf8');
+// }
+
+// // Helper to load progress
+// function loadProgress() {
+//     if (fs.existsSync(PROGRESS_FILE)) {
+//         return JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8')).lastPage;
+//     }
+//     return null;
+// }
 
 // --- Helper functions ---
 
@@ -280,15 +297,17 @@ async function syncDealsToHubspot(deals) {
         if (company && company.name) {
             try {
                 // Search for company by name (or use a more unique property if available)
+                let companyFilter = [];
+                if (company.vat_number) {
+                    companyFilter.push({ propertyName: 'vat_number', operator: 'EQ', value: company.vat_number });
+                } else if (company.domain) {
+                    companyFilter.push({ propertyName: 'domain', operator: 'EQ', value: company.domain });
+                } else {
+                    companyFilter.push({ propertyName: 'name', operator: 'EQ', value: company.name });
+                }
                 const companySearchRes = await hubspot.post('/crm/v3/objects/companies/search', {
-                    filterGroups: [{
-                        filters: [{
-                            propertyName: 'name',
-                            operator: 'EQ',
-                            value: company.name
-                        }]
-                    }],
-                    properties: ['name']
+                    filterGroups: [{ filters: companyFilter }],
+                    properties: ['name', 'vat_number', 'domain']
                 });
 
                 if (companySearchRes.data.results.length > 0) {
@@ -296,20 +315,30 @@ async function syncDealsToHubspot(deals) {
                     await hubspot.patch(`/crm/v3/objects/companies/${hubspotCompanyId}`, {
                         properties: {
                             name: company.name,
-                            // Add more mappings if needed (domain, vat, etc.)
+                            vat_number: company.vat_number || '',
+                            domain: company.domain || ''
+                            // ...other mappings
                         }
                     });
                 } else {
                     const companyRes = await hubspot.post('/crm/v3/objects/companies', {
                         properties: {
                             name: company.name,
+                            vat_number: company.vat_number || '',
+                            domain: company.domain || ''
                             // Add more mappings if needed
                         }
                     });
                     hubspotCompanyId = companyRes.data.id;
                 }
             } catch (error) {
-                console.error('❌ Error syncing company:', company.name, error.response?.data || error.message);
+                console.error(
+                    '❌ Error syncing company:', 
+                    company.name, 
+                    JSON.stringify(error.response?.data, null, 2), 
+                    error.response?.data?.errors, 
+                    error.response?.data?.validationResults
+                );
             }
         }
 
@@ -322,6 +351,9 @@ async function syncDealsToHubspot(deals) {
                 console.error('❌ Error associating company with deal:', assocErr.response?.data || assocErr.message);
             }
         }
+
+        // await new Promise(res => setTimeout(res, 300)); // 300ms delay, might work to bypass rate limits
+        // Uncomment the above line if you encounter rate limiting issues with HubSpot API
     }
 }
 
@@ -338,14 +370,28 @@ app.get('/callback', async (req, res) => {
 
     try {
         const accessToken = await fetchAccessToken(code);
-        const START_PAGE = 3100; // Start scanning from this page | Nick: Started from 750, 1500, 3000 |
-        const TOTAL_PAGES = 3221; // Total number of pages to scan (from Teamleader)
-        const SIZE = 10;
+
+        // Remove progress file logic
+        const startPage = parseInt(process.env.START_PAGE) || 1500; // Default to 1500 if not set
+        const totalPages = parseInt(process.env.TOTAL_PAGES) || 3221; // Default to 3221 if not set
+        const recordsPerPage = parseInt(process.env.RECORDS_PER_PAGE) || 10; // Default to SIZE if not set
         
         let allDealsWithPipeline = [];
 
-        for (let pageNumber = START_PAGE; pageNumber <= TOTAL_PAGES; pageNumber++) {
-            const deals = await fetchDeals(accessToken, pageNumber, SIZE);
+        // Remove progress loading
+        // let lastProcessedPage = loadProgress();
+        // if (lastProcessedPage) {
+        //     console.log(`Resuming from last processed page: ${lastProcessedPage}`);
+        //     startPage = lastProcessedPage;
+        // }
+
+        for (let pageNumber = startPage; pageNumber <= totalPages; pageNumber++) {
+            console.log(`
+===============================
+🔄 Processing page ${pageNumber} of ${totalPages}
+===============================
+            `);
+            const deals = await fetchDeals(accessToken, pageNumber, recordsPerPage);
 
             // Fetch phases
             const phaseIds = [...new Set(deals.map(deal => deal.current_phase && deal.current_phase.id).filter(Boolean))];
@@ -356,40 +402,68 @@ app.get('/callback', async (req, res) => {
             // Fetch details for each deal
             const dealsWithAllDetails = [];
             for (const deal of deals) {
-                let customerDetails = null;
                 let contactDetails = null;
+                let companyDetails = null;
                 let responsibleUserDetails = null;
 
-                // Check for contact_person first
+                // 1. Try deal.lead.contact_person
                 const contactPersonId = deal.lead.contact_person?.id;
                 if (contactPersonId) {
                     contactDetails = await fetchContact(accessToken, contactPersonId);
                 }
 
-                // If no contact_person, check if lead.customer is a contact
+                // 2. Try deal.lead.customer if it's a contact
                 if (!contactDetails && deal.lead.customer?.type === 'contact') {
                     contactDetails = await fetchContact(accessToken, deal.lead.customer.id);
                 }
 
-                // If lead.customer is a company, fetch company details
-                if (deal.lead.customer?.type === 'company') {
-                    customerDetails = await fetchCompany(accessToken, deal.lead.customer.id);
-                    // Optionally, fetch contacts linked to this company if needed
-                    // Example: customerDetails.contacts?.[0]?.id
+                // 3. Try deal.customer_details.contact_id
+                if (!contactDetails && deal.customer_details?.contact_id) {
+                    contactDetails = await fetchContact(accessToken, deal.customer_details.contact_id);
                 }
 
-                // Always fetch responsible user details
+                // 4. Try deal.contact_id
+                if (!contactDetails && deal.contact_id) {
+                    contactDetails = await fetchContact(accessToken, deal.contact_id);
+                }
+
+                // 5. Log if still missing
+                if (!contactDetails) {
+                    console.warn('⚠️ No contact found for deal:', deal.id, JSON.stringify(deal, null, 2));
+                }
+
+                // 3. Try to fetch company via deal.lead.customer if it's a company
+                if (deal.lead.customer?.type === 'company') {
+                    companyDetails = await fetchCompany(accessToken, deal.lead.customer.id);
+                }
+
+                // 4. Fallback: If contact has company_id, fetch that company
+                if (!companyDetails && contactDetails && contactDetails.company_id) {
+                    companyDetails = await fetchCompany(accessToken, contactDetails.company_id);
+                }
+
+                // 5. Fallback: If deal has company_id directly, fetch that company
+                if (!companyDetails && deal.company_id) {
+                    companyDetails = await fetchCompany(accessToken, deal.company_id);
+                }
+
+                // 6. Fallback: If deal has customer_details with company_id
+                if (!companyDetails && deal.customer_details?.company_id) {
+                    companyDetails = await fetchCompany(accessToken, deal.customer_details.company_id);
+                }
+
+                // 7. Fetch responsible user details if available
                 if (deal.responsible_user?.id) {
                     responsibleUserDetails = await fetchUser(accessToken, deal.responsible_user.id);
                 }
 
                 dealsWithAllDetails.push({
                     ...deal,
+                    contact_details: contactDetails,
+                    company_details: companyDetails,
                     current_phase_details: phaseMap[deal.current_phase?.id] || null,
-                    customer_details: customerDetails, // company details if company, null otherwise
-                    contact_details: contactDetails,   // contact details if contact, null otherwise
                     responsible_user_details: responsibleUserDetails,
-                    company_details: customerDetails   // keep for compatibility, same as above if company
+                    customer_details: companyDetails // for compatibility
                 });
             }
 
@@ -428,6 +502,9 @@ app.get('/callback', async (req, res) => {
 
             // Sync deals to HubSpot
             await syncDealsToHubspot(dealsWithPipeline);
+
+            // Remove progress saving
+            // saveProgress(pageNumber);
         }
 
         res.send(`<pre>${JSON.stringify(allDealsWithPipeline, null, 2)}</pre>`);
